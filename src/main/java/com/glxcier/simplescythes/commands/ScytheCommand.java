@@ -23,6 +23,9 @@ public class ScytheCommand implements CommandExecutor {
         );
     }
 
+    /**
+     * Determines the subcommand being called and runs it.
+     */
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
 

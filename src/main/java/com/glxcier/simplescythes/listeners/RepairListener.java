@@ -10,6 +10,9 @@ import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 
+/**
+ * Implements the repairing of scythes.
+ */
 public class RepairListener implements Listener {
 
     private final ScytheHandler scytheHandler;
@@ -20,6 +23,10 @@ public class RepairListener implements Listener {
 
     }
 
+    /**
+     * Allows scythes to be repaired by putting two of the same material
+     * scythes in a crafting grid.
+     */
     @EventHandler
     public void onCraftRepair(PrepareItemCraftEvent e) {
 

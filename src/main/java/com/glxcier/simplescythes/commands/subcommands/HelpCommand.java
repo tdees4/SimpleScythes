@@ -8,6 +8,9 @@ import org.bukkit.command.CommandSender;
 
 import java.util.List;
 
+/**
+ * A subcommand that lists all subcommands of the scythe command.
+ */
 public class HelpCommand extends SubCommand {
 
     private final ScytheCommand mainCommand;
@@ -17,6 +20,9 @@ public class HelpCommand extends SubCommand {
         this.mainCommand = mainCommand;
     }
 
+    /**
+     * Displays a list of commands related to the Simple Scythes plugin.
+     */
     @Override
     public void execute(CommandSender sender, String[] args) {
 

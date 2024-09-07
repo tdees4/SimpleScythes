@@ -9,6 +9,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+/**
+ * A subcommand that gives a chosen player a scythe of chosen material.
+ */
 public class GiveCommand extends SubCommand {
 
     private final ScytheHandler scytheHandler;
@@ -18,6 +21,9 @@ public class GiveCommand extends SubCommand {
         this.scytheHandler = scytheHandler;
     }
 
+    /**
+     * Gives a player a scythe of a chosen material if the command sender has the required permissions.
+     */
     @Override
     public void execute(CommandSender sender, String[] args) {
 

@@ -9,6 +9,9 @@ import org.bukkit.event.inventory.PrepareSmithingEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.SmithingInventory;
 
+/**
+ * Handles the smithing of scythes.
+ */
 public class SmithingListener implements Listener {
 
     private final ScytheHandler scytheHandler;

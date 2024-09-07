@@ -11,6 +11,9 @@ import org.bukkit.event.enchantment.PrepareItemEnchantEvent;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * Handles the enchanting of scythes.
+ */
 public class EnchantingListener implements Listener {
 
     private final ScytheHandler scytheHandler;
@@ -19,6 +22,9 @@ public class EnchantingListener implements Listener {
         this.scytheHandler = scytheHandler;
     }
 
+    /**
+     * Removes the efficiency enchantment from the possible list of enchantments for a scythe.
+     */
     @EventHandler
     public void onPrepareEnchant(PrepareItemEnchantEvent e) {
 
@@ -79,6 +85,12 @@ public class EnchantingListener implements Listener {
 
     }
 
+    /**
+     * Determines a new enchantment offer for a scythe based on random chance.
+     * @param previousLevel The level of the previous offer.
+     * @param cost The enchantment cost
+     * @return A new, valid scythe enchantment offer.
+     */
     private EnchantmentOffer rollNewOffer(int previousLevel, int cost) {
         int newLevel = (int) Math.ceil(previousLevel / 2.0);
 

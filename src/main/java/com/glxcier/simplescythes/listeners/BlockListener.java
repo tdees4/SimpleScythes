@@ -18,6 +18,9 @@ import org.bukkit.plugin.Plugin;
 
 import java.util.*;
 
+/**
+ * Implements the main functionality of scythes: breaking crops using right click.
+ */
 public class BlockListener implements Listener {
 
     private final Plugin plugin;
@@ -32,6 +35,9 @@ public class BlockListener implements Listener {
         tillableBlocks = Arrays.asList(Material.DIRT, Material.GRASS_BLOCK, Material.DIRT_PATH);
     }
 
+    /**
+     * Handles the replanting and drop functionality that comes with scythes.
+     */
     @EventHandler
     public void onBlockBreak(BlockBreakEvent e) {
 
@@ -71,6 +77,9 @@ public class BlockListener implements Listener {
 
     }
 
+    /**
+     * Allows the player to right-click with a scythe and till land or harvest crops.
+     */
     @EventHandler
     public void onRightClick(PlayerInteractEvent e) {
 
@@ -98,6 +107,13 @@ public class BlockListener implements Listener {
 
     }
 
+    /**
+     * Harvests crops in a certain radius depending on the type of scythe used.
+     * @param scythe The scythe being used.
+     * @param clickedLocation The location of the clicked block.
+     * @param player The player using the scythe.
+     * @param hand The hand the scythe is in. (Main hand or Off hand)
+     */
     private void harvestCrops(ItemStack scythe, Location clickedLocation, Player player, EquipmentSlot hand) {
 
         if (clickedLocation.getWorld() == null) {
@@ -146,6 +162,12 @@ public class BlockListener implements Listener {
         }
     }
 
+    /**
+     * Harvests crops at a specific block, accounting for the scythe's enchants and re-plant settings.
+     * @param player The player using the scythe.
+     * @param location The location of the crop (block) being harvested.
+     * @param scythe The scythe being used.
+     */
     private void harvestCropAt(Player player, Location location, ItemStack scythe) {
         Block block = location.getBlock();
         Material crop = block.getType();
@@ -214,6 +236,11 @@ public class BlockListener implements Listener {
         }
     }
 
+    /**
+     * Reduces the durability of the item by amount.
+     * @param item The item whose durability will be reduced.
+     * @param amount The amount the durability will be reduced by.
+     */
     private void reduceDurability(ItemStack item, int amount) {
         if (item.getItemMeta() instanceof Damageable) {
             Damageable damageMeta = (Damageable) item.getItemMeta();

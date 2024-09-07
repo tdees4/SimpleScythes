@@ -12,6 +12,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 import javax.annotation.Nullable;
 import java.util.*;
 
+/**
+ * Handles the main calculations pertaining to scythes.
+ */
 public class ScytheHandler {
 
     private final List<Material> scytheMaterials = Arrays.asList(
@@ -47,8 +50,13 @@ public class ScytheHandler {
         unbreakingOdds.put(3, 0.3);
     }
 
+    /**
+     * Given a certain material, returns a Scythe made from that
+     * material.
+     * @param material The material to make the scythe out of.
+     * @return The scythe as an ItemStack.
+     */
     public ItemStack getScythe(ScytheMaterial material) {
-
         Material hoe;
 
         switch (material) {
@@ -81,6 +89,9 @@ public class ScytheHandler {
         return item;
     }
 
+    /**
+     * Adds all possible scythe recipes to the server which allows scythes to be crafted.
+     */
     public void initializeRecipes() {
         System.out.println("Initializing recipes...");
         // Wooden Scythe
@@ -113,6 +124,11 @@ public class ScytheHandler {
 
     }
 
+    /**
+     * Sets up the ShapedRecipe object to be added to the server.
+     * @param sMaterial The material of the scythe whose crafting recipe will be set up.
+     * @return The ShapedRecipe to be added to the server.
+     */
     private ShapedRecipe setUpRecipe(ScytheMaterial sMaterial) {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft(sMaterial.getName().toLowerCase() + "scythe"), getScythe(sMaterial));
         recipe.shape(
@@ -124,12 +140,21 @@ public class ScytheHandler {
         return recipe;
     }
 
+    /**
+     * Determines if the passed ItemStack is a valid scythe.
+     * @param item The ItemStack to be evaluated.
+     * @return True if the ItemStack is a valid scythe, false otherwise.
+     */
     public boolean isScythe(@Nullable ItemStack item) {
         return item != null && item.getItemMeta() != null && item.getItemMeta().getLore() != null &&
                 item.getItemMeta().getLore().contains(ChatColor.BLUE + "Harvesting Tool") &&
                 scytheMaterials.contains(item.getType());
     }
 
+    /**
+     * @param scythe The scythe to be evaluated.
+     * @return The radius that the scythe removes crops in.
+     */
     public int getRadius(ItemStack scythe) {
         int radius = 0;
 
@@ -153,26 +178,47 @@ public class ScytheHandler {
         return radius;
     }
 
+    /**
+     * @return The list of crops affected by scythes.
+     */
     public List<Material> getCrops() {
         return crops;
     }
 
+    /**
+     * @return The list of seeds that scythes can re-plant.
+     */
     public List<Material> getSeeds() {
         return seeds;
     }
 
+    /**
+     * @return The list of items that scythed crops can drop.
+     */
     public List<Material> getCropItems() {
         return cropItems;
     }
 
+    /**
+     * @param fortuneLevel The level of fortune on a given scythe.
+     * @return The odds that a harvest will yield multiple crops.
+     */
     public double[] getFortuneOdds(int fortuneLevel) {
         return fortuneOdds.get(fortuneLevel);
     }
 
+    /**
+     * @param unbreakingLevel The level of unbreaking on a given scythe.
+     * @return The odds that it will be used without reducing durability.
+     */
     public double getUnbreakingOdds(int unbreakingLevel) {
         return unbreakingOdds.get(unbreakingLevel);
     }
 
+    /**
+     * @param scythe The scythe to be evaluated.
+     * @return The material of the scythe as a ScytheMaterial.
+     */
     public ScytheMaterial getScytheMaterial(ItemStack scythe) {
         switch (scythe.getType()) {
             case WOODEN_HOE:
