@@ -1,0 +1,9 @@
+name: SimpleScythes
+version: '${project.version}'
+main: com.glxcier.simplescythes.SimpleScythes
+api-version: 1.20
+commands:
+  scythe:
+    description: The base command for the Simple Scythes plugin
+    usage: /scythe
+    permission: scythe.admin

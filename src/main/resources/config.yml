@@ -1,0 +1,12 @@
+############################################################
+###                   Simple Scythes                     ###
+############################################################
+
+# Allows the usage of scythes to automatically re-plant seeds #
+enable-auto-replant: true
+
+# Allows scythes to till land like hoes #
+scythe-can-till: false
+
+# Crops harvested by a scythe go straight to the user's inventory #
+drops-to-inventory: false
