@@ -34,3 +34,6 @@ Right click crops with a scythe to harvest them!
 ## | Permissions |​
 
 [*] scythe.admin - gives permission for all commands.
+
+## [VISIT THE SPIGOTMC PAGE](https://www.spigotmc.org/resources/1-20-simple-scythes-add-a-basic-harvester-tool-to-your-server.111648/)
+
