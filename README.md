@@ -1,7 +1,5 @@
 # SimpleScythes
 
-Simple Scythes
-
 Adds scythes to your server!
 
 Right click crops with a scythe to harvest them!
