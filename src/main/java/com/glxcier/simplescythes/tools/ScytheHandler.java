@@ -121,7 +121,6 @@ public class ScytheHandler {
         ShapedRecipe diamondRecipe = setUpRecipe(ScytheMaterial.DIAMOND);
         diamondRecipe.setIngredient('W', Material.DIAMOND);
         Bukkit.getServer().addRecipe(diamondRecipe);
-
     }
 
     /**

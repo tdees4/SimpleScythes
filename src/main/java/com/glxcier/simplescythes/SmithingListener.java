@@ -22,7 +22,6 @@ public class SmithingListener implements Listener {
 
     @EventHandler
     public void onSmithingPrepare(PrepareSmithingEvent e) {
-
         SmithingInventory inventory = e.getInventory();
 
         ItemStack upgradeItemSlot = inventory.getItem(0);

@@ -25,7 +25,6 @@ public class HelpCommand extends SubCommand {
      */
     @Override
     public void execute(CommandSender sender, String[] args) {
-
         List<SubCommand> commandList = mainCommand.getSubCommands();
 
         int maxPages = (commandList.size() / 7) + 1;
@@ -55,6 +54,5 @@ public class HelpCommand extends SubCommand {
             SubCommand command = commandList.get(listIndex);
             CommandUtils.messageSender(sender, ChatColor.translateAlternateColorCodes('&', "&a" + command.getUsage() + " &3- &7" + command.getDescription()));
         }
-
     }
 }

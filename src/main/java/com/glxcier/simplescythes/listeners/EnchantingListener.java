@@ -27,7 +27,6 @@ public class EnchantingListener implements Listener {
      */
     @EventHandler
     public void onPrepareEnchant(PrepareItemEnchantEvent e) {
-
         if (!scytheHandler.isScythe(e.getItem())) {
             return;
         }
@@ -40,12 +39,10 @@ public class EnchantingListener implements Listener {
                 offers[i] = rollNewOffer(offer.getEnchantmentLevel(), offer.getCost());
             }
         }
-
     }
 
     @EventHandler
     public void onEnchant(EnchantItemEvent e) {
-
         if (!scytheHandler.isScythe(e.getItem())) {
             return;
         }
@@ -82,7 +79,6 @@ public class EnchantingListener implements Listener {
 
             enchantMap.put(enchantment, (int) Math.ceil(previousLevel / 2.0));
         }
-
     }
 
     /**

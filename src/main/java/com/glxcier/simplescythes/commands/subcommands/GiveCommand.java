@@ -26,7 +26,6 @@ public class GiveCommand extends SubCommand {
      */
     @Override
     public void execute(CommandSender sender, String[] args) {
-
         if (args.length < 2) {
             CommandUtils.messageSender(sender, ChatColor.RED + "Not enough arguments! Use the command like: " + getUsage());
             return;
@@ -66,7 +65,6 @@ public class GiveCommand extends SubCommand {
         for (int i = 0; i < amount; i++) {
             player.getInventory().addItem(scytheHandler.getScythe(material));
         }
-
     }
 
 }

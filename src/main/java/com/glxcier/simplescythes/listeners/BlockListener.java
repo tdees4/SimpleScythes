@@ -40,7 +40,6 @@ public class BlockListener implements Listener {
      */
     @EventHandler
     public void onBlockBreak(BlockBreakEvent e) {
-
         Block block = e.getBlock();
 
         if (!brokenCrops.contains(block.getLocation()))
@@ -74,7 +73,6 @@ public class BlockListener implements Listener {
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
             System.out.println("Replanting");
         }, 2L);
-
     }
 
     /**
@@ -82,7 +80,6 @@ public class BlockListener implements Listener {
      */
     @EventHandler
     public void onRightClick(PlayerInteractEvent e) {
-
         if (e.getClickedBlock() == null ||
                 e.getItem() == null ||
                 e.getAction() != Action.RIGHT_CLICK_BLOCK ||
@@ -104,7 +101,6 @@ public class BlockListener implements Listener {
         if (tillableBlocks.contains(block.getType()) && !plugin.getConfig().getBoolean("scythe-can-till")) {
             e.setCancelled(true);
         }
-
     }
 
     /**
@@ -115,7 +111,6 @@ public class BlockListener implements Listener {
      * @param hand The hand the scythe is in. (Main hand or Off hand)
      */
     private void harvestCrops(ItemStack scythe, Location clickedLocation, Player player, EquipmentSlot hand) {
-
         if (clickedLocation.getWorld() == null) {
             return;
         }
@@ -256,7 +251,6 @@ public class BlockListener implements Listener {
                     damageMeta.setDamage(amount);
                 }
             }
-
 
             item.setItemMeta(damageMeta);
         }

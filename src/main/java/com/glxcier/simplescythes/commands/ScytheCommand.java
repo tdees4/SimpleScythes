@@ -28,7 +28,6 @@ public class ScytheCommand implements CommandExecutor {
      */
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-
         if (strings.length > 0) {
             for (SubCommand subCommand : subCommands) {
                 if (subCommand.getName().equalsIgnoreCase(strings[0])) {
@@ -42,7 +41,6 @@ public class ScytheCommand implements CommandExecutor {
                 }
             }
         }
-
         CommandUtils.messageSender(commandSender, ChatColor.RED + "Improper command! Try using /scythe help.");
         return true;
     }

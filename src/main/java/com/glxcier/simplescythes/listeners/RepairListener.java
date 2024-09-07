@@ -18,9 +18,7 @@ public class RepairListener implements Listener {
     private final ScytheHandler scytheHandler;
 
     public RepairListener(ScytheHandler scytheHandler) {
-
         this.scytheHandler = scytheHandler;
-
     }
 
     /**
@@ -29,7 +27,6 @@ public class RepairListener implements Listener {
      */
     @EventHandler
     public void onCraftRepair(PrepareItemCraftEvent e) {
-
         CraftingInventory inventory = e.getInventory();
         ItemStack[] matrix = inventory.getMatrix();
 
@@ -67,7 +64,6 @@ public class RepairListener implements Listener {
             repairedSycythe.setItemMeta(itemMeta);
             inventory.setResult(repairedSycythe);
         }
-
     }
 
 }
